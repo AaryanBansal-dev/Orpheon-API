@@ -68,6 +68,18 @@ async fn main() -> Result<(), OrpheonError> {
 }
 ```
 
+## Development
+
+### Web
+
+```bash
+cargo run -p orpheon-node
+```
+
+```bash
+bun dev
+```
+
 ## 🛠️ Features (The 100+ Matrix)
 
 Orpheon supports over 100 advanced capabilities across 7 spheres:
