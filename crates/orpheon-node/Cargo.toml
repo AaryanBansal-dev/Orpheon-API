@@ -1,0 +1,45 @@
+[package]
+name = "orpheon-node"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Main Orpheon node binary with API server"
+
+[[bin]]
+name = "orpheon-node"
+path = "src/main.rs"
+
+[dependencies]
+orpheon-core = { workspace = true }
+orpheon-planner = { workspace = true }
+orpheon-state = { workspace = true }
+orpheon-negotiate = { workspace = true }
+
+# Web framework
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+
+# Async runtime
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Types
+uuid = { workspace = true }
+chrono = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[dev-dependencies]
+axum-test = "15.0"

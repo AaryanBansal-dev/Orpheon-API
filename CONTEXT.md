@@ -358,7 +358,7 @@ Orpheon is built to be the "Operating System" for Autonomous Agents. Its feature
 - [ ] WASM Planner compilation
 
 ### Phase 3: Ecosystem
-- [ ] Language bindings (Python, TS)
+- [ ] Language bindings (Rust, TypeScript)
 - [ ] "Orpheon Studio" (Visual debugger)
 - [ ] Standard Intent Library (Common tasks)
 

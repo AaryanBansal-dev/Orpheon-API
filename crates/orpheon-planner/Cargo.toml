@@ -1,0 +1,18 @@
+[package]
+name = "orpheon-planner"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "A* search-based planning engine for the Orpheon Protocol"
+
+[dependencies]
+orpheon-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }

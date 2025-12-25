@@ -1,0 +1,26 @@
+[package]
+name = "orpheon-sdk"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Client SDK for interacting with Orpheon nodes"
+
+[dependencies]
+orpheon-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+futures = { workspace = true }
+tracing = { workspace = true }
+
+# HTTP client
+reqwest = { version = "0.12", features = ["json"] }
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+
+[dev-dependencies]
+tokio = { workspace = true }

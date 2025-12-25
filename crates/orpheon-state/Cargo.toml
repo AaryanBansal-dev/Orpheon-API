@@ -1,0 +1,20 @@
+[package]
+name = "orpheon-state"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Temporal state store with time-travel capabilities for the Orpheon Protocol"
+
+[dependencies]
+orpheon-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }

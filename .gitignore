@@ -1,0 +1,60 @@
+# target
+**/target/
+
+# Rust
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js (for web version)
+**/node_modules/
+**/.next/
+**/out/
+**/.turbo/
+**/dist/
+
+# Build artifacts
+**/build/
+
+# Coverage
+**/coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug files
+debug_trace.txt
+context-error.log
+
+# Package manager locks (keep only bun.lockb)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Bun
+*.bun
+
+# TypeScript
+*.tsbuildinfo

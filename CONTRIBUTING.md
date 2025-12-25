@@ -11,8 +11,8 @@ This project adheres to the [Rust Code of Conduct](https://www.rust-lang.org/pol
 1.  **Fork the repository** on GitHub.
 2.  **Clone your fork** locally:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/orpheon.git
-    cd orpheon
+    git clone https://github.com/AaryanBansal-Dev/Orpheon-API.git
+    cd Orpheon-API
     ```
 3.  **Install Rust**: Ensure you have the latest stable Rust toolchain.
     ```bash
