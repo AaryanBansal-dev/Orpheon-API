@@ -209,52 +209,128 @@ Multiple Orpheon Nodes can form a mesh.
 
 ---
 
-## 6. Interaction Lifecycle (Example)
+## 9. The Capability Matrix (100+ Features)
 
-**Scenario**: An AI Agent needs to provision a GPU cluster for training, but has a strict budget.
+Orpheon is built to be the "Operating System" for Autonomous Agents. Its feature set spans cognition, networking, security, and economics.
 
-### Step 1: Intent Submission
-The Agent constructs an Intent using the Rust SDK:
+### 🧠 The Cognitive Sphere (Planning & AI)
+1.  **Recursive Sub-Intents**: Fractal decomposition of complex goals.
+2.  **Probabilistic Plan Branching**: Monte-Carlo tree search for best outcomes.
+3.  **Just-In-Time (JIT) Compilation**: Compiles plans to WASM for speed.
+4.  **Heuristic Pruning**: A* variants for pathfinding in state space.
+5.  **Multi-Objective Pareto Optimization**: Balances cost/speed/quality.
+6.  **Feedback-Loop Learning**: System learns from past plan failures.
+7.  **Human-in-the-Loop Interruption**: Pause execution for manual approval.
+8.  **Atomic Rollback Directives**: Granular undo steps for every action.
+9.  **Plan Memoization**: Caches successful plans for similar intents.
+10. **Dynamic Constraint Relaxation**: Soften constraints if no hard path exists.
+11. **Parallel Plan Speculation**: Race multiple strategies and pick the winner.
+12. **Deadlock Detection**: Graph-cycle analysis for resource locks.
+13. **Resource Starvation Prevention**: Fair scheduling algorithms.
+14. **Hot-Swappable Strategies**: Change from "Cheap" to "Fast" mid-flight.
+15. **LLM Intuition Layer**: Uses LLMs to guess likely successful paths.
+16. **Counterfactual Reasoning**: "What if" analysis for debugging.
+17. **Sentiment-Aware Negotiation**: Adapts to client "urgency" signals.
+18. **Semantic Plan Search**: Find plans by meaning, not just ID.
+19. **Adversarial Hardening**: Red-teaming the planner against bad inputs.
+20. **Model Distillation**: Edge nodes run tiny, distilled planner models.
 
-```rust
-let intent = Intent::builder()
-    .kind("provision_infrastructure")
-    .constraint("gpu_type", "H100")
-    .constraint("cluster_size", "8")
-    .constraint("region", "any")
-    .budget(Budget::usd(50.00)) // Low budget!
-    .build();
+### 🌐 The Network Sphere (Distribution)
+21. **P2P Gossip Protocol**: Fast state propagation across the mesh.
+22. **Federated Mesh**: Nodes subcontract work to other nodes.
+23. **CRDT State Merging**: Conflict-free data synchronization.
+24. **Geofenced Zones**: Restrict execution to specific legal jurisdictions.
+25. **Latency-Aware Routing**: Direct intents to the closest capable node.
+26. **Disruption Tolerant (DTN)**: Queues intents when offline, syncs later.
+27. **Edge Offloading**: Pushes computation to client devices.
+28. **QUIC Transport**: Multiplexed, low-latency streams over UDP.
+29. **Multi-Path Routing**: Use redundant paths for reliability.
+30. **DHT Service Discovery**: Decentralized finding of capability providers.
+31. **Partition Healing**: Auto-recovers from network splits.
+32. **Leaderless Finality**: Consensus without single points of failure.
+33. **Backpressure Signaling**: Slows down clients when overloaded.
+34. **Tenant Rate Limiting**: Token-bucket fairness per API key.
+35. **Distributed Tracing**: OpenTelemetry spanning across the entire mesh.
 
-client.submit(intent).await?;
-```
+### 🛡️ The Trust Sphere (Security & Privacy)
+36. **Zero-Knowledge Proofs**: Verify execution without revealing data.
+37. **Homomorphic Encryption**: Compute on encrypted state (experimental).
+38. **Macaroon Tokens**: Caveat-based authorization (e.g., "valid for 5 mins").
+39. **Quantum-Resistant Sig**: Dilithium/Kyber algorithm support.
+40. **TEE Enclaves**: Run sensitive plans in Intel SGX/AMD SEV.
+41. **Immutable Audit Ledger**: Merkle-chain of all actions.
+42. **Replay Protection**: Nonce + Timestamp windows.
+43. **Formal Verification**: Mathematical proof of plan safety.
+44. **Dynamic Scopes**: Permissions that shrink as execution proceeds.
+45. **Tor Integration**: Anonymous intent submission.
+46. **Multi-Sig Approvals**: Requiring 2-of-3 keys for critical intents.
+47. **Behavioral Anomaly AI**: Detects "weird" intent patterns.
+48. **Wasm Sandboxing**: Plugins run in strict isolation.
+49. **Side-Channel Mitigation**: Constant-time execution paths.
+50. **Supply Chain Auth**: Signed binaries for all plugins.
 
-### Step 2: Planning & Validation
-The Orpheon Node validates the intent. The Planner looks at available resources.
-*   *Direct Path*: AWS US-EAST (Too expensive, exceeds budget).
-*   *Alternative Path*: Spot Instances on Azure (Fits budget, but lower reliability).
+### 💾 The Temporal Sphere (Data & State)
+51. **Time-Travel Querying**: `SELECT * FROM state AS OF 2024`.
+52. **Content-Addressable Storage**: Artifacts hashed like IPOFS.
+53. **Differential Compression**: Stores only state deltas.
+54. **Ephemeral Tiers**: RAM-only state for high speed.
+55. **Durable Tiers**: NVMe/S3 state for long retention.
+56. **Cross-Shard Atomicity**: ACID transactions across nodes.
+57. **Vector State Embeddings**: Search state by semantic meaning.
+58. **Graph Relations**: Knowledge-graph style state linking.
+59. **Event Sourcing**: Reconstruct state from zero by replaying events.
+60. **Schema Evolution**: Hot-upgrade of data structures.
+61. **JQ Subscription Filter**: Complex boolean logic for streams.
+62. **Copy-on-Write Snapshots**: Cheap branching.
+63. **Data Sovereignty**: Pin state to specific physical drives.
+64. **Erasure Coding**: RAID-like redundancy across nodes.
+65. **GDPR 'Right to Forget'**: Crypto-shredding key deletion.
 
-### Step 3: Negotiation
-The Server responds:
-> "I cannot provide On-Demand H100s for $50. However, I can provide Spot Instances with a 5% preemption risk."
+### 💰 The Economic Sphere (Markets)
+66. **Micropayment Channels**: Streaming money for streaming APIs.
+67. **Dynamic Congestion Pricing**: Uber-style surge pricing for compute.
+68. **Resource Bonding Curves**: Price changes based on supply.
+69. **Computational Futures**: Buy "compute credits" for next month.
+70. **Execution Insurance**: Payouts if SLAs are missed.
+71. **Arbitrage Detection**: Finds cheapest path across providers.
+72. **Tokenized Quotas**: Tradeable API limits.
+73. **Spot Markets**: Bid on spare capacity.
+74. **Carbon-Aware Scheduling**: Execute when grid energy is green.
+75. **Stablecoin Settlement**: Native USDC/USDT support.
 
-The Agent's logic evaluates this risk and accepts.
+### 🛠️ The Developer Sphere (DX)
+76. **Visual Plan Debugger**: Step-through replay of execution.
+77. **Time-Slider UI**: Scrub back and forth in system history.
+78. **Intent Standard Library**: `std::intent::*` for common tasks.
+79. **Rust Macro DSL**: `intent! { do X where Y }`.
+80. **TS Type Gen**: Auto-generate TypeScript interfaces.
+81. **CLI Simulator**: Run the full stack locally.
+82. **LSP Server**: IDE autocompletion for Intent files.
+83. **Chaos Injection**: Randomly fail steps to test robustness.
+84. **Live Log Tailing**: WebSocket stream of planner logs.
+85. **Hot-Reload Plugins**: Update logic without restarts.
+86. **Mock Mode**: Fake external API responses.
+87. **Interactive Docs**: Try intents directly in documentation.
+88. **Scaffold Generator**: `orpheon new project_name`.
+89. **Github Action**: CI/CD integration for Intent validation.
+90. **Canary Deployments**: Rollout plans to 1% of users.
 
-### Step 4: Execution & Observation
-The steps bloom into actual API calls to cloud providers.
-The Agent does **not** poll. It subscribes:
-
-```rust
-client.watch("infrastructure.status == 'ready'", |event| {
-    println!("Cluster is ready: {:?}", event);
-}).await;
-```
-
-### Step 5: Artifact Generation
-Once complete, the Agent receives an `ExecutionArtifact`. This is a cryptographically signed receipt proving that 8 H100s were provisioned at the agreed price.
+### ⚡ The Hardware Sphere (Low Level)
+91. **FPGA Acceleration**: Offload A* search to hardware.
+92. **DPDK Networking**: Bypass OS kernel for speed.
+93. **RTOS Support**: Run on real-time embedded systems.
+94. **Satellite Optimization**: Protocol handles high-latency links.
+95. **Acoustic Link Support**: For underwater/subterranean use.
+96. **IPFS Bridges**: Fetch resources from decentralized storage.
+97. **BCI Triggers**: (Experimental) Intent via Brain-Computer Interface.
+98. **Biometric Signing**: Use FaceID/TouchID keys.
+99. **AR Overlay**: Visualize drone paths / robot intents.
+100. **Entropy Beacons**: True hardware randomness sources.
+101. **Dead Man's Switch**: Auto-execute if keepalive fails.
 
 ---
 
-## 7. Comparison Overview
+## 7. Comparison Overview (Updated)
 
 | Feature | REST / OpenAPI | GraphQL | Orpheon Protocol |
 | :--- | :--- | :--- | :--- |
