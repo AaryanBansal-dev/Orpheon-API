@@ -1,11 +1,5 @@
 # Orpheon Protocol
 > **The Intent-Native Interaction Standard for Autonomous Systems**
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/orpheon-protocol/core/ci.yml?branch=main)](https://github.com/orpheon-protocol/core)
-[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
-[![Rust Version](https://img.shields.io/badge/rust-1.75%2B-orange.svg)](https://www.rust-lang.org)
-[![Discord](https://img.shields.io/discord/1234567890?label=discord&color=5865F2)](https://discord.gg/orpheon)
-
 **Orpheon** replaces the rigid Request/Response paradigm with a negotiable, intent-based interaction model designed for AI agents, autonomous orchestrators, and high-reliability systems.
 
 [**📚 Read the Full Context & Specification**](./CONTEXT.md)
